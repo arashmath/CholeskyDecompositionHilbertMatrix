@@ -8,6 +8,7 @@ and its transpose.
 One purpose of matrix decomposition is reducing calculations cost while solving a system of linear equations by decomposing the -
 coefficients matrix into a multipication of triangular matrices.
 -  As a reminder, <i>Hilbert matrix</i> of order 'n' is a symmetric positive definite matrix defined by the following formula:
+
 H[i][j] = 1 / (i+j-1)    for i & j in range 1 to n
 
 Both of the programs print out the lower triangular matrix in Cholesky method.

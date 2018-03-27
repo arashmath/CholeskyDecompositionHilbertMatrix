@@ -15,7 +15,7 @@ Both of the programs print out the lower triangular matrix in Cholesky method.
 
 "CholeskyDecompositionHilbertMatrix.py" has the functions all coded by me and does not use any special libraries.
 
-"CDHM_numpy.py" is much more consise and uses <b>Numpy & Scipy</b> libraries in order to perform its task; Therefore these
+"CDHM_numpy.py" is much more concise and uses <b>Numpy & Scipy</b> libraries in order to perform its task; Therefore these
 two famous libraries have to be installed on your operating system before running the code. (Both of these libraries are
 avaiable in Anaconda) 
 

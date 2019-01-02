@@ -1,8 +1,9 @@
 # This program prints the the lower triangular matrix in Cholesky decomposition of -
 # a Hilbert matrix of any given order.
+# Code by: Arash Ashrafzadeh
 
 #------------------------------ function makeHilbert ------------------------------
-# This function creates and returns Hilbert matrix of order n ('n' is inputted by user)
+# This function creates and returns Hilbert matrix of order n ('n' is inputted by user).
 
 def makeHilbert(n):
     Hilbert = [[0 for i in range(n)]for j in range(n)]
@@ -12,7 +13,7 @@ def makeHilbert(n):
     return Hilbert
 
 #------------------------------ function choleskyDecompostion ------------------------------
-# This function decomposes the desired Hilbert matrix using Cholesky method
+# This function decomposes the desired Hilbert matrix using Cholesky method.
 
 def choleskyDecomposition(Hilbert):
     L = [[0 for i in range(len(Hilbert))]for j in range(len(Hilbert))]
@@ -28,7 +29,7 @@ def choleskyDecomposition(Hilbert):
     return L
 
 #------------------------------ function showMatrix ------------------------------
-# This function prints a 2-D string list in float format
+# This function prints a 2-D string list in float format.
 
 def showMatrix(matrix):
     for row in matrix:

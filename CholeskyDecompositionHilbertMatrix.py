@@ -1,4 +1,4 @@
-# This program prints the the lower triangular matrix in Cholesky decomposition of -
+# This program prints the the lower-triangular matrix in Cholesky decomposition of -
 # a Hilbert matrix of any given order.
 # Code by: Arash Ashrafzadeh
 
@@ -6,7 +6,7 @@
 # This function creates and returns Hilbert matrix of order n ('n' is inputted by user).
 
 def makeHilbert(n):
-    Hilbert = [[0 for i in range(n)]for j in range(n)]
+    Hilbert = [[0 for i in range(n)]for j in range(n)] # Initializing an nxn matrix of zeros
     for i in range(0,n):
         for j in range(0,n):
             Hilbert[i][j] = 1/(i+j+1)
@@ -16,16 +16,16 @@ def makeHilbert(n):
 # This function decomposes the desired Hilbert matrix using Cholesky method.
 
 def choleskyDecomposition(Hilbert):
-    L = [[0 for i in range(len(Hilbert))]for j in range(len(Hilbert))]
-    L[0][0] = (Hilbert[0][0])**0.5
-    for i in range(1, len(Hilbert)):
+    L = [[0 for i in range(len(Hilbert))]for j in range(len(Hilbert))] # Initializing an nxn matrix of zeros
+    L[0][0] = (Hilbert[0][0])**0.5 # Initializing the first element in the matrix
+    for i in range(1, len(Hilbert)): # Initializing the first column of the matrix
         L[i][0] = (Hilbert[0][i])/(L[0][0])
-    for i in range(1, len(Hilbert)):
+    for i in range(1, len(Hilbert)): # Filling-in elsewhere
         for j in range(1, i+1):
             if i == j:
-                L[i][j] = (Hilbert[i][j] - sum((L[i][k]**2) for k in range(0, i)))**0.5
+                L[i][j] = (Hilbert[i][j] - sum((L[i][k]**2) for k in range(0, i)))**0.5 # Filling the main diagonal
             else:
-                L[i][j] = (1/L[j][j])*(Hilbert[i][j] - sum(L[i][k]*L[j][k] for k in range(0, min(i,j))))
+                L[i][j] = (1/L[j][j])*(Hilbert[i][j] - sum(L[i][k]*L[j][k] for k in range(0, min(i,j)))) # Filling below the main diagonal
     return L
 
 #------------------------------ function showMatrix ------------------------------
@@ -35,6 +35,6 @@ def showMatrix(matrix):
     for row in matrix:
         print([format(elem, "f") for elem in row])
 
-
+#------------------------------ main calls ------------------------------
 order = int(input(" Enter the order of Hilbert matrix: ")) # Inputs the order of Hilbert matrix
 showMatrix(choleskyDecomposition(makeHilbert(order))) # main call
